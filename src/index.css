@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-app-bg: var(--bg-primary);
+  --color-app-text: var(--text-primary);
+}
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --text-primary: #0f172a; /* slate-900 */
+    --bg-card: #f8fafc;
+    --border-color: #e2e8f0;
+  }
+
+  body {
+    @apply antialiased transition-colors duration-300;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+  }
+
+  /* Smooth transitions */
+  h1, h2, h3, h4, h5, h6, p, span, label, input, select, textarea, button, strong, em {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  /* Main containers */
+  .app-container {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .card-container {
+    background-color: #ffffff;
+    border-color: var(--border-color);
+  }
+
+  /* Specific reset for inputs to ensure they are readable */
+  input, select, textarea {
+    background-color: transparent;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
